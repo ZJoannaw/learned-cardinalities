@@ -10,7 +10,7 @@ from multiprocessing import Pool
 from cardinality_estimation.db import DB
 from networkx.readwrite import json_graph
 
-from sql_rep.utils import execute_query
+# from sql_rep.utils import execute_query
 import copy
 
 def get_all_cardinalities(samples):

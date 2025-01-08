@@ -105,8 +105,9 @@ def main():
                 continue
             bitmaps[node] = {}
             data = qrep["subset_graph"].nodes()[node]
-            # if len(node) == 1:
-                # print(data.keys())
+            if len(node) == 1:
+                print("====data.keys()===")
+                print(data.keys())
 
             if args.bitmap_type not in data:
                 if len(node) == 1:

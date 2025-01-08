@@ -91,11 +91,11 @@ def read_flags():
     parser.add_argument("--db_host", type=str, required=False,
             default="localhost")
     parser.add_argument("--user", type=str, required=False,
-            default="ceb")
+            default="postgres")
     parser.add_argument("--pwd", type=str, required=False,
-            default="password")
+            default="zjw")
     parser.add_argument("--port", type=str, required=False,
-            default=5431)
+            default=4325)
     parser.add_argument("--sample_num", type=int, required=False,
             default=1000)
     parser.add_argument("--sampling_type", type=str, required=False,

@@ -28,15 +28,15 @@ def read_flags():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--db_name", type=str, required=False,
-            default="ergastf1")
+            default="imdb")
     parser.add_argument("--db_host", type=str, required=False,
             default="localhost")
     parser.add_argument("--user", type=str, required=False,
-            default="ceb")
+            default="postgres")
     parser.add_argument("--pwd", type=str, required=False,
-            default="password")
+            default="zjw")
     parser.add_argument("--port", type=str, required=False,
-            default=5432)
+            default=4325)
     parser.add_argument("--sample_num", type=int, required=False,
             default=100)
     parser.add_argument("--sampling_type", type=str, required=False,
@@ -64,14 +64,15 @@ def main():
     # tables = ["complete_cast"]
     # tables = ["aka_title"]
 
-    # tables = ["title", "name", "aka_name", "keyword", "movie_info",
-            # "movie_companies", "company_type", "kind_type", "info_type",
-            # "role_type", "company_name", "cast_info", "char_name",
-            # "link_type", "movie_info_idx", "comp_cast_type",
-            # "person_info",
-            # "movie_link", "movie_keyword",
-            # "aka_title", "complete_cast"
-            # ]
+    # imdb
+    tables = ["title", "name", "aka_name", "keyword", "movie_info",
+            "movie_companies", "company_type", "kind_type", "info_type",
+            "role_type", "company_name", "cast_info", "char_name",
+            "link_type", "movie_info_idx", "comp_cast_type",
+            "person_info",
+            "movie_link", "movie_keyword",
+            "aka_title", "complete_cast"
+            ]
 
     ## 5440 stats db
     # tables = ["badges", "comments", "posthistory", "postlinks", "posts",
@@ -94,10 +95,10 @@ def main():
 	 # public | status               | table | ceb
 
     ## 5432, ergast
-    tables = ["circuits", "constructorResults", "constructorStandings",
-				"constructors", "driverStandings", "drivers",
-				"lapTimes", "pitStops", "qualifying",
-				"races", "results", "status"]
+    # tables = ["circuits", "constructorResults", "constructorStandings",
+	# 			"constructors", "driverStandings", "drivers",
+	# 			"lapTimes", "pitStops", "qualifying",
+	# 			"races", "results", "status"]
 
     # let's build all the tables on primary keys first
     for table in tables:
