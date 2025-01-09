@@ -49,29 +49,53 @@ def main():
     cursor = con.cursor()
 
     # build table to id_columns
+    # table_to_ids = defaultdict(list)
+    # table_to_ids["title"].append("id")
+    # table_to_ids["name"].append("id")
+    # table_to_ids["keyword"].append("id")
+    # table_to_ids["company_name"].append("id")
+    #
+    # table_to_ids["movie_info"].append("id")
+    # table_to_ids["movie_info"].append("movie_id")
+    # table_to_ids["movie_keyword"].append("id")
+    # table_to_ids["movie_keyword"].append("keyword_id")
+    # table_to_ids["movie_keyword"].append("movie_id")
+    # table_to_ids["cast_info"].append("id")
+    # table_to_ids["cast_info"].append("movie_id")
+    # table_to_ids["cast_info"].append("person_id")
+    # table_to_ids["movie_companies"].append( "id")
+    # table_to_ids["movie_companies"].append( "movie_id")
+    # table_to_ids["movie_companies"].append("company_id")
+    #
+    # fkey_to_primary = {}
+    # fkey_to_primary["movie_id"] = "title"
+    # fkey_to_primary["company_id"] = "company_name"
+    # fkey_to_primary["keyword_id"] = "keyword"
+    # fkey_to_primary["person_id"] = "name"
+
+    # 针对stats数据集进行创建 TODO:修改创建动态表格by zjw
     table_to_ids = defaultdict(list)
-    table_to_ids["title"].append("id")
-    table_to_ids["name"].append("id")
-    table_to_ids["keyword"].append("id")
-    table_to_ids["company_name"].append("id")
+    table_to_ids["badges"].append("id")
+    table_to_ids["badges"].append("userid")
+    table_to_ids["comments"].append("id")
+    table_to_ids["comments"].append("postid")
+    table_to_ids["comments"].append("userid")
+    table_to_ids["posthistory"].append("id")
+    table_to_ids["posthistory"].append("userid")
+    table_to_ids["postlinks"].append("id")
+    table_to_ids["postlinks"].append("postid")
+    table_to_ids["posts"].append("id")
+    table_to_ids["tags"].append("id")
+    table_to_ids["tags"].append("excerptpostid")
+    table_to_ids["users"].append("id")
+    table_to_ids["votes"].append("id")
+    table_to_ids["votes"].append("userid")
 
-    table_to_ids["movie_info"].append("id")
-    table_to_ids["movie_info"].append("movie_id")
-    table_to_ids["movie_keyword"].append("id")
-    table_to_ids["movie_keyword"].append("keyword_id")
-    table_to_ids["movie_keyword"].append("movie_id")
-    table_to_ids["cast_info"].append("id")
-    table_to_ids["cast_info"].append("movie_id")
-    table_to_ids["cast_info"].append("person_id")
-    table_to_ids["movie_companies"].append( "id")
-    table_to_ids["movie_companies"].append( "movie_id")
-    table_to_ids["movie_companies"].append("company_id")
-
+    # 对以上主键到外键的映射中的外键比如excerptpostid所对应的表格进行解释，比如excerptpostid就表示posts表格的id
     fkey_to_primary = {}
-    fkey_to_primary["movie_id"] = "title"
-    fkey_to_primary["company_id"] = "company_name"
-    fkey_to_primary["keyword_id"] = "keyword"
-    fkey_to_primary["person_id"] = "name"
+    fkey_to_primary["excerptpostid"] = "posts"
+    fkey_to_primary["userid"] = "users"
+    fkey_to_primary["postid"] = "posts"
 
     # sel_ids = defaultdict(list)
     sampling_frac = float(args.sampling_percentage) / 100.00

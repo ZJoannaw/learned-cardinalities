@@ -64,15 +64,18 @@ def main():
     # tables = ["complete_cast"]
     # tables = ["aka_title"]
 
-    # imdb
-    tables = ["title", "name", "aka_name", "keyword", "movie_info",
-            "movie_companies", "company_type", "kind_type", "info_type",
-            "role_type", "company_name", "cast_info", "char_name",
-            "link_type", "movie_info_idx", "comp_cast_type",
-            "person_info",
-            "movie_link", "movie_keyword",
-            "aka_title", "complete_cast"
-            ]
+    # imdb TODO:注释了这部分的imdb的bitmap，如果生成位图，需要取消注释 by zjw
+    # tables = ["title", "name", "aka_name", "keyword", "movie_info",
+    #         "movie_companies", "company_type", "kind_type", "info_type",
+    #         "role_type", "company_name", "cast_info", "char_name",
+    #         "link_type", "movie_info_idx", "comp_cast_type",
+    #         "person_info",
+    #         "movie_link", "movie_keyword",
+    #         "aka_title", "complete_cast"
+    #         ]
+
+    # stats的表格
+    tables = ["badges", "comments", "posthistory", "postlinks", "posts", "tags", "users", "votes"]
 
     ## 5440 stats db
     # tables = ["badges", "comments", "posthistory", "postlinks", "posts",
